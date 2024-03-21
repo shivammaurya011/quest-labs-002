@@ -20,6 +20,7 @@ function Home() {
   };
 
   const handleDrop = (taskId, newStatus) => {
+    // Update task status locally
     const updatedTasks = tasks.map(task => {
       if (task.id === parseInt(taskId)) {
         return { ...task, status: newStatus };
@@ -27,14 +28,20 @@ function Home() {
       return task;
     });
     setTasks(updatedTasks);
-  };
 
+    axios
+      .patch(`http://localhost:3001/tasks/${taskId}`, { status: newStatus })
+      .then(response => {
+        fetchTasks();
+      })
+      .catch(error => console.error('Error updating task status:', error));
+  };
   return (
     <HomeLayout>
-      <div className='flex bg-blue-600 min-h-screen p-4 justify-center gap-6 flex-wrap'>
+      <div className='flex bg-blue-600 min-h-screen p-6 justify-center gap-4 flex-wrap'>
         <Column
           name='To Do'
-          data={tasks.filter(task => task.status === 'todo')}
+          data={tasks.filter(task => task.status === 'to_do')}
           onDrop={handleDrop}
           setTasks={setTasks}
         />

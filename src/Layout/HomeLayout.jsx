@@ -5,9 +5,9 @@ import Footer from '../components/Footer/Footer';
 function HomeLayout({ children }) {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
