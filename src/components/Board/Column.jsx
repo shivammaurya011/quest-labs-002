@@ -42,7 +42,6 @@ function Column({ name, data, onDrop, setTasks }) {
       console.error('Error submitting task:', error);
     }
   };
-  
   return (
     <section
       className='bg-gray-200 p-4 rounded-xl h-fit min-w-72 shadow-md'
