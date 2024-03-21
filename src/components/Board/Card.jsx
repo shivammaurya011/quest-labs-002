@@ -7,7 +7,6 @@ function Card({ priority, title, id }) {
     event.dataTransfer.setData("taskId", id);
   };
 
-  // Define mapping between priority levels and colors
   const priorityColors = {
     low: 'bg-green-300',
     medium: 'bg-yellow-300',
@@ -17,7 +16,6 @@ function Card({ priority, title, id }) {
     emergency: 'bg-orange-300',
   };
 
-  // Get the appropriate background color based on priority
   const priorityColor = priorityColors[priority] || 'bg-gray-300';
 
   return (

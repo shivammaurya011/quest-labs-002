@@ -12,7 +12,7 @@ function Home() {
 
   const fetchTasks = () => {
     axios
-      .get('http://localhost:3001/tasks')
+      .get('https://quest-server.vercel.app/tasks')
       .then(response => {
         setTasks(response.data);
       })
@@ -20,7 +20,6 @@ function Home() {
   };
 
   const handleDrop = (taskId, newStatus) => {
-    // Update task status locally
     const updatedTasks = tasks.map(task => {
       if (task.id === parseInt(taskId)) {
         return { ...task, status: newStatus };
@@ -30,7 +29,7 @@ function Home() {
     setTasks(updatedTasks);
 
     axios
-      .patch(`http://localhost:3001/tasks/${taskId}`, { status: newStatus })
+      .patch(`https://quest-server.vercel.app/tasks/${taskId}`, { status: newStatus })
       .then(response => {
         fetchTasks();
       })

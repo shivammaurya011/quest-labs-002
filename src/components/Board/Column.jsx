@@ -31,7 +31,7 @@ function Column({ name, data, onDrop, setTasks }) {
     try {
       taskData.status = data.length > 0 ? data[0].status : '';
   
-      await axios.post('http://localhost:3001/tasks', taskData);
+      await axios.post('https://quest-server.vercel.app/tasks', taskData);
   
       console.log('Task submitted successfully:', taskData);
   

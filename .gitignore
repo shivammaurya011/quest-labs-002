@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/quest-labs-be
 # testing
 /coverage
 

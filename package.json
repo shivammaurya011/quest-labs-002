@@ -42,5 +42,10 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "description": "Task Management System is a simple web application built with React for managing tasks with different priorities and statuses. It allows users to organize tasks based on priority levels and track their progress.",
+  "main": "tailwind.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
