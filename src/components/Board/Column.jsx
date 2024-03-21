@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Card from './Card';
 import { FiPlus, FiMoreHorizontal } from 'react-icons/fi';
 import AddTaskModal from '../Modal/AddTaskModal';
-import axios from 'axios';
 
 function Column({ name, data, onDrop, setTasks }) {
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleDragStart = (e, taskId) => {
     e.dataTransfer.setData('taskId', taskId);
   };
@@ -20,28 +20,23 @@ function Column({ name, data, onDrop, setTasks }) {
   };
 
   const handleModal = () => {
-    setIsOpen(true); 
+    setIsOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsOpen(false);
   };
 
-  const handleSubmitTask = async (taskData) => {
+  const handleSubmitTask = (taskData) => {
     try {
-      taskData.status = data.length > 0 ? data[0].status : '';
-  
-      await axios.post('https://quest-server.vercel.app/tasks', taskData);
-  
-      console.log('Task submitted successfully:', taskData);
-  
+      taskData.status = name.toLowerCase().replace(' ', '_');
       setTasks([...data, taskData]);
-  
       handleCloseModal();
     } catch (error) {
       console.error('Error submitting task:', error);
     }
   };
+
   return (
     <section
       className='bg-gray-200 p-4 rounded-xl h-fit min-w-72 shadow-md'
@@ -63,7 +58,7 @@ function Column({ name, data, onDrop, setTasks }) {
         <FiPlus className='mr-2' />
         Add to card
       </button>
-      <AddTaskModal isOpen={isOpen} onClose={handleCloseModal} onSubmit={handleSubmitTask} /> {/* Render the AddTaskModal component */}
+      <AddTaskModal isOpen={isOpen} onClose={handleCloseModal} onSubmit={handleSubmitTask} />
     </section>
   );
 }
