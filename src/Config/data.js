@@ -1,4 +1,4 @@
-export const tasks = [
+const tasks = [
     {
         "id": "1",
         "priority": "high",
@@ -148,3 +148,5 @@ export const tasks = [
         "comments": []
       }
 ]
+
+export default tasks

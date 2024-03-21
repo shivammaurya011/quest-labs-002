@@ -3,7 +3,7 @@ import Card from './Card';
 import { FiPlus, FiMoreHorizontal } from 'react-icons/fi';
 import AddTaskModal from '../Modal/AddTaskModal';
 
-function Column({ name, data, onDrop, setTasks }) {
+function Column({ name, data, onDrop, setTasksData }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDragStart = (e, taskId) => {
@@ -30,7 +30,8 @@ function Column({ name, data, onDrop, setTasks }) {
   const handleSubmitTask = (taskData) => {
     try {
       taskData.status = name.toLowerCase().replace(' ', '_');
-      setTasks([...data, taskData]);
+      onDrop(taskData, taskData.status);
+      setTasksData(prevData => [...prevData, taskData]); // Adding new taskData to the tasks array
       handleCloseModal();
     } catch (error) {
       console.error('Error submitting task:', error);
