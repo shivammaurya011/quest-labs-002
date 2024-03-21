@@ -45,7 +45,7 @@ function Column({ name, data, onDrop, setTasks }) {
   
   return (
     <section
-      className='bg-gray-200 p-4 rounded-xl min-w-72 shadow-md'
+      className='bg-gray-200 p-4 rounded-xl h-fit min-w-72 shadow-md'
       onDragOver={handleDragOver}
       onDrop={e => handleDrop(e, name.toLowerCase().replace(' ', '_'))}
     >
