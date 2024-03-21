@@ -11,7 +11,7 @@ Task Management System is a simple web application built with React for managing
 
 ## Demo
 
-![Task Management System Demo](demo.gif)
+![Task Management System Demo]([demo.gif](https://quest-labs-002.vercel.app/))
 
 ## Installation
 
@@ -34,3 +34,4 @@ npm install
 
 npm start
 
+![image](https://github.com/shivammaurya011/quest-labs-002/assets/71092987/376b1d55-3bf4-4726-b543-b6ff30c9e008)
