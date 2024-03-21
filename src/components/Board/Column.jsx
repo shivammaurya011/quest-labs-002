@@ -31,7 +31,7 @@ function Column({ name, data, onDrop, setTasksData }) {
     try {
       taskData.status = name.toLowerCase().replace(' ', '_');
       onDrop(taskData, taskData.status);
-      setTasksData(prevData => [...prevData, taskData]); // Adding new taskData to the tasks array
+      setTasksData(prevData => [...prevData, taskData]); 
       handleCloseModal();
     } catch (error) {
       console.error('Error submitting task:', error);
