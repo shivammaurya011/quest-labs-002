@@ -20,11 +20,11 @@ function Column({ name, data, onDrop, setTasks }) {
   };
 
   const handleModal = () => {
-    setIsOpen(true); // Open the modal when the button is clicked
+    setIsOpen(true); 
   };
 
   const handleCloseModal = () => {
-    setIsOpen(false); // Close the modal
+    setIsOpen(false);
   };
 
   const handleSubmitTask = async (taskData) => {
@@ -43,8 +43,6 @@ function Column({ name, data, onDrop, setTasks }) {
     }
   };
   
-  
-
   return (
     <section
       className='bg-gray-200 p-4 rounded-xl min-w-72 shadow-md'
